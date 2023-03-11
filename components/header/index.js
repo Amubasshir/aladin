@@ -1,9 +1,12 @@
 import Add from './Add';
+import styles from './styles.module.scss';
+import Top from './Top';
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className={styles.header}>
       <Add />
+      <Top />
     </header>
   );
 };
