@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './styles.module.scss';
 
 const UserMenu = ({ loggedIn }) => {
@@ -7,9 +8,9 @@ const UserMenu = ({ loggedIn }) => {
       {loggedIn ? (
         <div className={styles.flex}>
           <img
+            className={styles.mimg}
             src="https://e7.pngegg.com/pngimages/799/987/png-clipart-computer-icons-avatar-icon-design-avatar-heroes-computer-wallpaper.png"
             alt=""
-            className={styles.menu_img}
           />
           <div className={styles.col}>
             <span>Welcome back, </span>
@@ -19,16 +20,26 @@ const UserMenu = ({ loggedIn }) => {
         </div>
       ) : (
         <div className={styles.flex}>
-          <button>Register</button>
-          <button>Login</button>
+          <button className={styles.btn_primary}>Register</button>
+          <button className={styles.btn_outlined}>Login</button>
         </div>
       )}
       <ul>
-        <li href="/profile">Account</li>
-        <li href="/profile/orders">My Orders</li>
-        <li href="/profile/message">Message</li>
-        <li href="/profile/address">Address</li>
-        <li href="/profile/wishlist">Wishlist</li>
+        <li>
+          <Link href="/profile">Account</Link>
+        </li>
+        <li>
+          <Link href="/profile/orders">My Orders</Link>
+        </li>
+        <li>
+          <Link href="/profile/message">Message</Link>
+        </li>
+        <li>
+          <Link href="/profile/address">Address</Link>
+        </li>
+        <li>
+          <Link href="/profile/wishlist">Wishlist</Link>
+        </li>
       </ul>
     </div>
   );
